@@ -11,7 +11,7 @@
     "WSAlumnos": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/libro",
+      "launchUrl": "api/alumno",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

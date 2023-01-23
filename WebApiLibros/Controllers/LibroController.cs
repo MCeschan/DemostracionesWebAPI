@@ -17,7 +17,7 @@ namespace WebApiLibros.Controllers
         {
             this.context = context;
         }
-
+        //GET—> traer todos los libros
         //GET: api/libro
         [HttpGet]
         public ActionResult<IEnumerable<Libro>> Get()
@@ -25,6 +25,8 @@ namespace WebApiLibros.Controllers
             return context.Libros.ToList();
 
         }
+        //GET—>traer todos los libros por autorId
+
         //GET api/libro/listado/33
         [HttpGet("listado/{id}")] //--------------RUTA PERSONALIZADA
         public ActionResult<IEnumerable<Libro>> GetAllById(int id)
@@ -35,8 +37,8 @@ namespace WebApiLibros.Controllers
             return libros;
 
         }
-       
 
+        //GET→ Traer uno por Id
         //GET api/libro/5
         [HttpGet("{id}")]
         public ActionResult<Libro> GetById(int id)
@@ -46,6 +48,7 @@ namespace WebApiLibros.Controllers
                            select a).SingleOrDefault();
             return libro;
         }
+        //POST→Insertar libros, retornar un Ok()
         //POST api/libro
         [HttpPost]
         public ActionResult Post(Libro libro)
@@ -59,7 +62,8 @@ namespace WebApiLibros.Controllers
             return Ok(); //ES CODIGO 200
 
         }
-        //PUT api/autor/2
+        //PUT→modificar libro, pasado id y modelo.retornar un NoContent()
+        //PUT api/libro/2
         [HttpPut("{id}")]
         public ActionResult Put(int id, [FromBody] Libro libro)
         {
@@ -72,14 +76,14 @@ namespace WebApiLibros.Controllers
             return NoContent();
         }
 
-
+        //DELETE —>Eliminar libro. Retornar el libro eliminado
         [HttpDelete("{id}")]
         public ActionResult<Libro> Delete(int id)
-        {//el autor eliminado se lo mandamos al cliente.
+        {//el libro eliminado se lo mandamos al cliente.
             var libro = (from a in context.Libros
                          where a.Id == id
                          select a).SingleOrDefault();
-            //ahí buscamos al autor por id.
+            //ahí buscamos al libro por id.
 
             if (libro == null)
             {
