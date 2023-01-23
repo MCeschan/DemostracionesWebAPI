@@ -3,12 +3,12 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "weatherforecast",
+      "launchUrl": "api/libro",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "WSAlumnos": {
+    "WebApiLibros": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api/libro",
@@ -23,7 +23,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:9652",
+      "applicationUrl": "http://localhost:57672",
       "sslPort": 0
     }
   }
