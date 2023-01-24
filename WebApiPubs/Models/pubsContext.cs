@@ -27,7 +27,7 @@ namespace WebApiPubs.Models
         public virtual DbSet<Publisher> Publishers { get; set; }
         public virtual DbSet<Roysched> Roysched { get; set; }
         public virtual DbSet<Sales> Sales { get; set; }
-        public virtual DbSet<Stores> Stores { get; set; }
+        public virtual DbSet<Store> Stores { get; set; }
         public virtual DbSet<Titleauthor> Titleauthor { get; set; }
         public virtual DbSet<Titles> Titles { get; set; }
         public virtual DbSet<Titleview> Titleview { get; set; }
@@ -369,7 +369,7 @@ namespace WebApiPubs.Models
                     .HasConstraintName("FK__sales__title_id__4BAC3F29");
             });
 
-            modelBuilder.Entity<Stores>(entity =>
+            modelBuilder.Entity<Store>(entity =>
             {
                 entity.HasKey(e => e.StorId)
                     .HasName("UPK_storeid");

@@ -15,6 +15,6 @@ namespace WebApiPubs.Models
         public short? Highqty { get; set; }
         public decimal Discount { get; set; }
 
-        public virtual Stores Stor { get; set; }
+        public virtual Store Stor { get; set; }
     }
 }
