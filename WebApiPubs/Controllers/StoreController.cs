@@ -90,15 +90,27 @@ namespace WebApiPubs.Controllers
             return stores;
 
         }
-        //GetbyCityState
-        [HttpGet("ciudades/{city}")] //--------------RUTA PERSONALIZADA
-        public ActionResult<IEnumerable<Store>> GetByCity(string city)
-        {
-            List<Store> stores = (from a in context.Stores
-                                   where a.City == city
-                                   select a).ToList();
-            return stores;
+        ////GetbyCityState
+        //[HttpGet("ciudades/{city}")] //--------------RUTA PERSONALIZADA
+        //public ActionResult<IEnumerable<Store>> GetByCity(string city)
+        //{
+        //    List<Store> stores = (from a in context.Stores
+        //                           where a.City == city
+        //                           select a).ToList();
+        //    return stores;
 
+        //}
+        [HttpGet("{city}/{state}")]
+        public ActionResult<IEnumerable<Store>> GetByCityState(string city, string state)
+        {
+            List<Store> stores = (from s in context.Stores
+                                  where s.City == city && s.State == state
+                                  select s).ToList();
+            if (stores.Count == 0)
+            {
+                return NotFound();
+            }
+            return stores;
         }
     }
 }
