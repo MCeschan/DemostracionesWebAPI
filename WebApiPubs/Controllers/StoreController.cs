@@ -72,7 +72,7 @@ namespace WebApiPubs.Controllers
             return store;
 
         }
-        [HttpGet("{name}")]
+        [HttpGet("nombres/{name}")]
         public ActionResult<Store> GetByName(string name)
         {
             Store store = (from a in context.Stores
@@ -91,7 +91,7 @@ namespace WebApiPubs.Controllers
 
         }
         //GetbyCityState
-        [HttpGet("listado/{city}")] //--------------RUTA PERSONALIZADA
+        [HttpGet("ciudades/{city}")] //--------------RUTA PERSONALIZADA
         public ActionResult<IEnumerable<Store>> GetByCity(string city)
         {
             List<Store> stores = (from a in context.Stores
