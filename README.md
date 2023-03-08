@@ -1,3 +1,3 @@
 # DemostracionesWebAPI
-Prácticas WEB API CRUD
+Prácticas WEB API.
 ORM, EFCore, servicios, CRUD, pruebas en Postman.
